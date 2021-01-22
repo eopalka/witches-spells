@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  type: 
+  difficulty: 1
+  user_id: 1
+  spell_id: 1
+
+two:
+  title: MyString
+  type: 
+  difficulty: 1
+  user_id: 1
+  spell_id: 1
