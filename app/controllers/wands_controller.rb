@@ -1,0 +1,2 @@
+class WandsController < ApplicationController
+end
