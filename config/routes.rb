@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :wands
   resources :spells
   resources :books
   resources :users
