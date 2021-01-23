@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 2021_01_22_230448) do
   create_table "wands", force: :cascade do |t|
     t.string "name"
     t.string "wood"
+    t.string "core"
     t.integer "length"
-    t.integer "user_id_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_wands_on_user_id_id"
+    t.index ["user_id"], name: "index_wands_on_user_id"
   end
 
-  add_foreign_key "wands", "user_ids"
+  add_foreign_key "wands", "users"
 end
