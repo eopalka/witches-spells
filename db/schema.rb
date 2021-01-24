@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_01_22_230448) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "class"
+    t.string "genre"
     t.string "difficulty"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

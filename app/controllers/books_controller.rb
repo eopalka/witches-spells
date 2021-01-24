@@ -9,7 +9,6 @@ class BooksController < ApplicationController
 
     def new
         @book = Book.new
-        3.times { @book.spells.build } #has_many
     end
 
     def create
@@ -24,7 +23,7 @@ class BooksController < ApplicationController
     private
 
     def book_params
-        params.require(:book).permit(:title, :class, :difficulty, spells_attributes: [:name,:description,:difficulty_level,:power_level])
+        params.require(:book).permit(:title, :genre, :difficulty, spells_attributes: [:name, :description, :difficulty_level, :power_level])
     end
     
 end
