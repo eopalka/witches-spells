@@ -1,0 +1,17 @@
+<h1>Spell Edit:</h1>
+
+    <%= form_for @spell do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.label :difficulty_level %>
+    <%= f.number_field :difficulty_level %>
+    <br>
+    <%= f.label :power_level %>
+    <%= f.number_field :power_level %>
+    <br>
+    <%= f.submit "Update Spell" %>
+    <% end %>
