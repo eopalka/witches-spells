@@ -21,9 +21,11 @@
   <ul id="nav-mobile" class="right hide-on-med-and-down">
     <% if !logged_in? %>
     <li><%= link_to 'sign-up', "users/new"%></li>
+    <li><%= link_to 'log-in', "users/login"%></li>
     <% else %>
     <li><%= link_to 'spells', spells_path%></li>
     <li><%= link_to 'books', books_path%></li>
+    <li><%= link_to "Logout", logout_path, method: 'delete' %></li>
     <% end %>
   </ul>
 </div>
