@@ -1,0 +1,13 @@
+<h1>Create Book</h1>
+    <%= form_for @book do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :class %>
+    <%= f.text_field :class %>
+    <br>
+    <%= f.label :difficulty %>
+    <%= f.number_field :difficulty %>
+    <br>
+    <%= f.submit "New Spell" %>
+    <% end %>
