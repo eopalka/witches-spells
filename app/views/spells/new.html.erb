@@ -1,16 +1,16 @@
 <h1>Create Spell</h1>
     <%= form_for @spell do |f| %>
-    <%= f.label :name %>
+    <%= f.label (:name) %>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :description %>
+    <%= f.label (:description) %>
     <%= f.text_area :description %>
     <br>
-    <%= f.label :difficulty_level %>
-    <%= f.number_field :difficulty_level %>
+    <%= f.label (:difficulty_level) %>
+    <%= f.number_field :difficulty_level, min: 1, max: 10 %>
     <br>
-    <%= f.label :power_level %>
-    <%= f.number_field :power_level %>
+    <%= f.label (:power_level) %>
+    <%= f.number_field :power_level, min: 1, max: 10 %>
     <br>
     <%= f.submit "New Spell" %>
     <% end %>

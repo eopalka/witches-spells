@@ -1,13 +1,13 @@
 <h1>Create Book</h1>
     <%= form_for @book do |f| %>
-    <%= f.label :title %>
+    <%= f.label (:title) %>
     <%= f.text_field :title %>
     <br>
-    <%= f.label :genre %>
+    <%= f.label (:genre) %>
     <%= f.text_field :genre %>
     <br>
-    <%= f.label :difficulty %>
-    <%= f.number_field :difficulty %>
+    <%= f.label (:difficulty) %>
+    <%= f.number_field :difficulty, min: 1, max: 5 %>
     <br>
     <%= f.submit "Edit Book" %>
     <% end %>
