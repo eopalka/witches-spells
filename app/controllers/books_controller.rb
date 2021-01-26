@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+    before_action :redirect_if_not_logged_in
+    
     def index
         @books = Book.all 
     end
@@ -9,6 +11,7 @@ class BooksController < ApplicationController
 
     def new
         @book = Book.new
+        3.times { @book.spells.build } #has_many
     end
 
     def create
