@@ -1,40 +1,45 @@
+
+
+  
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WitchesSpells</title>
+    <title>ShoeRating</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-  <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
 
-<body>
+  <body class="l-box">
+    <div>
   <nav>
 <div class="nav-wrapper" style="color:#fff;background:#484f4f">
   <a class="brand-logo"> Only Witches</a>
   <ul id="nav-mobile" class="right hide-on-med-and-down">
     <% if !logged_in? %>
-    <li><%= link_to 'sign-up', "users/new"%></li>
-    <li><%= link_to 'log-in', "users/login"%></li>
+    <li><%= link_to "Log in with Google", "/auth/google_oauth2"%></li>
+    <li><%= link_to 'Sign-Up', "/signup"%></li>
+    <li><%= link_to 'Log in', "/login"%></li>
     <% else %>
-    <li><%= link_to 'spells', spells_path%></li>
-    <li><%= link_to 'books', books_path%></li>
+    <li><%= link_to 'Spells', spells_path%></li>
+    <li><%= link_to 'Spell Books', books_path%></li>
     <li><%= link_to "Logout", logout_path, method: 'delete' %></li>
     <% end %>
   </ul>
 </div>
 </nav>
+    
+    </div>
+    
 
-
-  </head>
-
-    <div  class="container" style= "display: flex; min-height: 100vh; flex-direction: column;" >
+    <div><%= flash[:message] %></div>
     <%= yield %>
   </body>
 </html>
