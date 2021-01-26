@@ -1,0 +1,9 @@
+    <%= in_the_partial.label (:title) %>
+    <%= in_the_partial.text_field :title %>
+    <br>
+    <%= in_the_partial.label (:genre) %>
+    <%= in_the_partial.text_field :genre %>
+    <br>
+    <%= in_the_partial.label (:difficulty) %>
+    <%= in_the_partial.number_field :difficulty, min: 1, max: 5 %>
+
