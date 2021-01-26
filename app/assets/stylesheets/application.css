@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+ html {
+    font-family: sans-serif;
+}
+
+body {
+    min-width: 320px;
+    background-color: #fff;
+    color: #777;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1.125em;
+}
+
+a {
+    color: #3b8bba; /* block-background-text-normal */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #265778; /* block-normal-text-normal */
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: inline;
+  }
