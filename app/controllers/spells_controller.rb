@@ -1,4 +1,7 @@
 class SpellsController < ApplicationController
+    before_action :redirect_if_not_logged_in
+    layout "spell"
+
     def index
         if params[:book_id] && @book = Book.find(params[:book_id])
             @spells = @book.spells
