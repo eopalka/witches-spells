@@ -1,5 +1,3 @@
-<h1> All Spells:</h1>
+<%= display_index_header %>
 
-<% @spells.each do |spell| %>
-<li> <%= link_to spell.name, spell_path(spell)%> </li>
-<% end %>
+<%= render partial: "spell", collection: @spells %>
