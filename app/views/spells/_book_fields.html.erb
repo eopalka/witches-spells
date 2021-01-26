@@ -1,0 +1,7 @@
+<h3> Select a book: </h3>
+<%= f.collection_select :book_id, Book.all, :id, :title %>
+
+<h3>Or create a new book: </h3>
+<%= f.fields_for :book do |b| %>
+    <%= render partial: "books/form", locals: { in_the_partial: b } %>
+<% end %>
