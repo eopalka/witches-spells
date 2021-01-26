@@ -1,14 +1,9 @@
 <h1> Edit Book:</h1>
 
+
+<%= render partial: "layouts/error", locals: {object: @book}  %>
+
     <%= form_for @book do |f| %>
-    <%= f.label (:title) %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label (:genre) %>
-    <%= f.text_field :genre %>
-    <br>
-    <%= f.label (:difficulty) %>
-    <%= f.number_field :difficulty, min: 1, max: 5 %>
-    <br>
-    <%= f.submit "Edit Book" %>
+        <%= render partial: "form", locals: { in_the_partial: f } %>
+        <%= f.submit %> 
     <% end %>
