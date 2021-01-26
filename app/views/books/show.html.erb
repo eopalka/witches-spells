@@ -1,5 +1,10 @@
-<h1> This Book:</h1>
+<h1><%= @book.title %> </h1>
+<h2>Type of book:<%= @book.genre %> </h2>
+<h2>Difficulty:<%= @book.difficulty %> </h2>
 
-Title: <%= @book.title %><br>
-Genre: <%=  @book.genre%><br>
-Difficulty: <%= @book.difficulty%><br>
+<h1> This Book's spells here:</h1>
+<%= render @book.spells %>
+
+  
+
+
