@@ -11,7 +11,7 @@ class SpellsController < ApplicationController
     end
 
     def show
-        @spell = Spell.find(params[:id])
+        find_spell
     end
 
     def new
@@ -36,11 +36,11 @@ class SpellsController < ApplicationController
     end
 
     def edit
-        @spell = Spell.find(params[:id])
+        find_spell
     end
 
     def update
-        @spell = Spell.find(params[:id])
+        find_spell
         @spell.update(spell_params)
         if @spell.valid?
             redirect_to spells_path
@@ -50,7 +50,7 @@ class SpellsController < ApplicationController
     end
 
     def destroy
-        @spell = Spell.find(params[:id])
+        find_spell
         @spell.destroy
         redirect_to spells_path
     end
@@ -58,7 +58,7 @@ class SpellsController < ApplicationController
     private
 
     def spell_params
-        params.require(:spell).permit(:name, :description, :difficulty_level, :power_level, book_attributes: [:title, :genre, :difficulty])
+        params.require(:spell).permit(:name, :description, :difficulty_level, :power_level, :book_id, book_attributes: [:title, :genre, :difficulty])
     end
 
 
