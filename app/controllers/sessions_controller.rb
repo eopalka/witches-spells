@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :redirect_if_logged_in, except: [:destroy]
     def welcome
     end
 
@@ -23,7 +24,6 @@ class SessionsController < ApplicationController
     end
 
     def omniauth #if they are logging in with oauth
-        # if that user has already logged in this way
         user = User.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
             u.email = auth["info"]["email"]
             u.password = SecureRandom.hex(15)
