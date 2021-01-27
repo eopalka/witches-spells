@@ -1,7 +1,7 @@
 <%= render partial: "layouts/error", locals: {object: @spell}  %>
 
 
-<%= form_for([@book, @spell]) do |f| %>
+<%= form_for [@book, @spell] do |f| %>
     <%= f.label (:name) %>
     <%= f.text_field :name %>
     <br>
@@ -17,4 +17,10 @@
     <%= book_form_fields(f) %>
     <%= f.submit %>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+       </script>
 
