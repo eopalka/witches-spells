@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem "figaro"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
 gem 'omniauth-rails_csrf_protection'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
