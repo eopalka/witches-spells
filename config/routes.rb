@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
   root to: 'sessions#welcome'
-
-  get 'auth/google_oauth2/callback', to: 'sessions#omniauth'
+  match '/auth/:google_oauth2/callback' => 'sessions#omniauth', via: [:get, :post]
+  
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
   delete '/logout', to: 'sessions#destroy'
  
 
-  get '/signup', to: 'users#new'
+  get '/signup', to: 'users#new', as: "signup"
   post '/signup', to: 'users#create'
 
   resources :users
