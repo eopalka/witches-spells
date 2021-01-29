@@ -28,16 +28,13 @@ class SessionsController < ApplicationController
             u.email = auth["info"]["email"]
             u.password = SecureRandom.hex(15)
             u.name = auth["info"]["email"]
-        end
-
-        # check that they register successful
-        if user.valid? 
-            session[:user_id] = user.id   #log them in
+            end
+        if user.valid? #if the user exsists then I want to save them into my session
+            session[:user_id] = user.id  
             redirect_to user_path(user)
         else
             redirect_to login_path
         end
-       
     end
 
     private 
@@ -45,6 +42,4 @@ class SessionsController < ApplicationController
     def auth 
         request.env['omniauth.auth']
     end
-
-
 end
