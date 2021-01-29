@@ -2,7 +2,7 @@ class BooksController < ApplicationController
     before_action :redirect_if_not_logged_in
     
     def index
-        @books = Book.all,alphabetize
+        @books = Book.all.alphabetize
     end
 
     def show
