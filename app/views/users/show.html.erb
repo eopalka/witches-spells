@@ -1,12 +1,26 @@
 <h1><%= @user.name%>'s Spell Books</h1>
 
+<div class="activity-feed; container" style="text-align:center" >
+<% @books.each do |book| %>
+<li> <%= link_to book.title, book_path(book)%> </li>
+<% end %>
+</div>
+<br><br><br><br><br>
 
 
-
-
-<h4>Activity Feed</h4>
-<div class="activity-feed">
+<div class="activity-feed; container" style="text-align:center" >
+<h4 style="color: #501B1D; text-align:center">Activity Feed</h4>
   <% @activities.each do |activity| %>
       <%= render_activity activity %>
   <% end %>
 </div>
+
+
+
+<style>
+.container { 
+background-color: rgba(100%, 100%, 100%, .3);
+border: 2px #83677B;
+border-radius: 200px; 
+}
+</style>
