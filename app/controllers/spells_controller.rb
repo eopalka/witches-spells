@@ -10,7 +10,11 @@ class SpellsController < ApplicationController
     end
 
     def show
-        find_spell
+        if !find_spell
+            redirect_to spells_path
+        else
+            find_spell
+        end
     end
 
     def new

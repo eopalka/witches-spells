@@ -6,7 +6,11 @@ class BooksController < ApplicationController
     end
 
     def show
+        if !find_book
+            redirect_to books_path
+        else
         find_book
+        end
     end
 
     def new
@@ -36,6 +40,9 @@ class BooksController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def delete
     end
 
     private

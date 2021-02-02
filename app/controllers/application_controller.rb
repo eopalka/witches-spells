@@ -24,10 +24,10 @@ class ApplicationController < ActionController::Base
     end
 
     def find_book
-        @book = Book.find(params[:id])
+        @book = Book.find_by_id(params[:id])
     end
 
     def find_spell
-        @spell = Spell.find(params[:id])
+        @spell = Spell.find_by_id(params[:id])
     end
 end

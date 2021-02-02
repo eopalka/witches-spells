@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :spells
   end
 
-  match '*path' => 'application_controller#fallback', via: [:all]
+  match '*path' => 'application#fallback', via: :all
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
