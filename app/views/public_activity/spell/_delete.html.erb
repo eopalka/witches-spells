@@ -1,0 +1,13 @@
+<% if activity.trackable %>
+  <div class="feed-item">
+    <div class="date"><%= activity.trackable.deleted_at %></div>
+    <div class="text">
+  
+      <%= link_to "#{ activity.owner.name }", user_path(activity.owner.id), class: "link-dark" %> 
+      just made a spell 
+      <%= link_to "#{ activity.trackable.name }", spell_path(activity.trackable.id), class: 'link-dark' %>
+      for the book
+      <%= link_to "#{ activity.trackable.book.title }", book_path(activity.trackable.book.id), class: 'link-dark' %>
+    </div>
+  </div>
+<% end %>
