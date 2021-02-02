@@ -57,7 +57,7 @@ class SpellsController < ApplicationController
     private
 
     def spell_params
-        params.require(:spell).permit(:name, :description, :difficulty_level, :power_level, :book_id, book_attributes: [:title, :genre, :difficulty])
+        params.require(:spell).permit(:name, :description, :difficulty_level, :power_level, :book_id, book_attributes: [:title, :genre, :difficulty, :user_id])
     end
 
 

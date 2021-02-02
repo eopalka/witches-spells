@@ -7,3 +7,5 @@
     <%= in_the_partial.label (:difficulty) %>
     <%= in_the_partial.number_field :difficulty, min: 1, max: 5 %>
 
+    <%= in_the_partial.hidden_field :user_id, value: current_user.id%>
+
