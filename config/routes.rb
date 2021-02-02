@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: "signup"
   post '/signup', to: 'users#create'
 
+ 
   resources :users
   resources :wands
   resources :spells

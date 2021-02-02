@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    include PublicActivity::Model
+    tracked except: :update, owner: ->(controller, model) { controller && controller.current_user }
+    
     has_many :books
     has_many :spells, through: :books
     has_one :wand

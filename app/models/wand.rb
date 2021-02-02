@@ -1,4 +1,7 @@
 class Wand < ApplicationRecord
+  include PublicActivity::Model
+  tracked
+  
   belongs_to :user
 
   validates :name, :wood, :core, presence: true

@@ -1,1 +1,12 @@
 <h1><%= @user.name%>'s Spell Books</h1>
+
+
+
+
+
+<h4>Activity Feed</h4>
+<div class="activity-feed">
+  <% @activities.each do |activity| %>
+      <%= render_activity activity %>
+  <% end %>
+</div>

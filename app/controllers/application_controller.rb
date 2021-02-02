@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
 
+    include PublicActivity::StoreController
     include ApplicationHelper  #give us access to the helper methods in that module
+
+    def current_user
+        @current_user ||=User.find(session[:user_id]) if session[:user_id]
+    end
+    helper_method :current_user
+   
 
     private
 
