@@ -4,7 +4,8 @@
     <div class="text">
   
       <%= link_to "#{ activity.owner.name }", user_path(activity.owner.id), class: "link-dark" %> 
-      just made a book
+      just made a spell 
+      for the book
       <%= link_to "#{ activity.trackable.book.title }", book_path(activity.trackable.book.id), class: 'link-dark' %>
     </div>
   </div>
