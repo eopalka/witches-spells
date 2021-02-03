@@ -42,7 +42,14 @@ class BooksController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
+        find_book
+        if current_user.id != @book.user_id
+            redirect_to books_path
+        else 
+            @book.destroy 
+            redirect_to books_path
+        end
     end
 
     private
