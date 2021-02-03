@@ -1,0 +1,11 @@
+<h1> this is a edit form</h1>
+    <%= form_for @user do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.submit "Make changes" %>
+    <% end %>

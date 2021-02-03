@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
         user = User.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
             u.email = auth["info"]["email"]
             u.password = SecureRandom.hex(15)
-            u.name = auth["info"]["email"]
+            u.name = auth["info"]["name"]
             end
         if user.valid? #if the user exsists then I want to save them into my session
             session[:user_id] = user.id  
