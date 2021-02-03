@@ -2,7 +2,7 @@ module SpellsHelper
 
     def display_index_header
         if @book 
-        content_tag(:h1, "#{@book.title}  Spells")
+        content_tag(:h1, "#{@book.title}'s'  Spells")
         else 
         content_tag(:h1, "All Spells")
         end 
@@ -10,9 +10,9 @@ module SpellsHelper
 
     def display_new_header
         if @book 
-        content_tag(:h1, "Create a #{@book.title} Spell")
+        content_tag(:h1, "Make a Spell for #{@book.title}")
         else 
-        content_tag(:h1, "Create a Spell")
+        content_tag(:h1, "Make a Spell")
         end 
    end
 
