@@ -1,6 +1,8 @@
 class SpellsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
+    before_action :redirect_if_not_book_owner, only: [:destroy, :edit, :update]
+
     def index
         if params[:book_id] && @book = Book.find(params[:book_id])
             @spells = @book.spells
@@ -10,6 +12,7 @@ class SpellsController < ApplicationController
     end
 
     def show
+        find_book_by_id
         if !find_spell
             redirect_to spells_path
         else
@@ -64,5 +67,15 @@ class SpellsController < ApplicationController
         params.require(:spell).permit(:name, :description, :difficulty_level, :power_level, :book_id, book_attributes: [:title, :genre, :difficulty, :user_id])
     end
 
+    def find_book_by_id
+        @book = Book.find_by_id(params[:book_id])
+    end
 
+    def redirect_if_not_book_owner
+        find_spell
+        find_book_by_id
+        if current_user.id != @book.user_id
+            redirect_to spells_path
+        end
+    end
 end
