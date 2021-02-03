@@ -57,5 +57,9 @@ class BooksController < ApplicationController
     def book_params
         params.require(:book).permit(:title, :genre, :difficulty, :user_id, spells_attributes: [:name, :description, :difficulty_level, :power_level])
     end
+
+    def find_book
+        @book = Book.find_by_id(params[:id])
+    end
     
 end

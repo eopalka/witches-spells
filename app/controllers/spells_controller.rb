@@ -70,12 +70,15 @@ class SpellsController < ApplicationController
     def find_book_by_id
         @book = Book.find_by_id(params[:book_id])
     end
+    
+    def find_spell
+        @spell = Spell.find_by_id(params[:id])
+    end
 
     def redirect_if_not_book_owner
         find_spell
         find_book_by_id
-        if current_user.id != @book.user_id
-            redirect_to spells_path
-        end
+        return redirect_to spells_path unless @book
+        redirect_to spells_path unless current_user.id == @book.user_id
     end
 end

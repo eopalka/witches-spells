@@ -22,12 +22,6 @@ class ApplicationController < ActionController::Base
         redirect_to user_path(current_user) if logged_in?
     end
 
-    def find_book
-        @book = Book.find_by_id(params[:id])
-    end
 
-    def find_spell
-        @spell = Spell.find_by_id(params[:id])
-    end
 
 end
