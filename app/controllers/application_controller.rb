@@ -9,9 +9,8 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def fallback
-        redirect_to user_path
+        redirect_to users_path
     end
-   
 
     private
 
@@ -30,4 +29,5 @@ class ApplicationController < ActionController::Base
     def find_spell
         @spell = Spell.find_by_id(params[:id])
     end
+
 end
