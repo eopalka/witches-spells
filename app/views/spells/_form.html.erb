@@ -1,6 +1,6 @@
 <%= render partial: "layouts/error", locals: {object: @spell}  %>
 
-
+<div class="container" style="text-align:center" >
 <%= form_for [@book, @spell] do |f| %>
     <%= f.label (:name) %>
     <%= f.text_field :name %>
@@ -14,6 +14,7 @@
     <%= f.label (:power_level) %>
     <%= f.number_field :power_level, min: 1, max: 10 %>
     <br>
+    </div>
     <%= book_form_fields(f) %>
     <%= f.submit %>
 <% end %>

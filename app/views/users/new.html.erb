@@ -1,15 +1,19 @@
-<h2>New User</h2>
+<br><br>
+<h1>Please Make an Account Below</h1>
+<br><br>
+<div class="container" style="text-align:center">
     <%= form_for(@user, url:'/signup') do |f| %>
 
     <%= f.label :email %>
     <%= f.text_field :email %>
-    <br>
+    <br><br>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <br>
+    <br><br>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <br>
+    <br><br>
     <%= f.submit "Sign Up" %>
     <% end %>
+</div>
 

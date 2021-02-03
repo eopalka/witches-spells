@@ -1,11 +1,16 @@
-<h1> this is a edit form</h1>
+<br><br>
+<h1>Time to make some changes</h1>
+<br><br>
+
+<div class="container" style="text-align:center">
     <%= form_for @user do |f| %>
 
     <%= f.label :email %>
     <%= f.text_field :email %>
-    <br>
+    <br><br>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <br>
+    <br><br>
     <%= f.submit "Make changes" %>
     <% end %>
+</div>

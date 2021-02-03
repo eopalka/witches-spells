@@ -26,13 +26,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: rgb(75, 75, 75);
+    color: #4056A1 !important;
+    text-align: center !important;
 }
+
 h3 {
     font-size: 1.25em;
+    color: #F13C20 !important;
 }
 h4 {
     font-size: 1.125em;
+    color:#D79922 !important;
 }
 
 a {
@@ -53,3 +57,20 @@ a:visited {
     background-color: red;
     display: inline;
   }
+
+.container { 
+    background-color: rgba(100%, 100%, 100%, .3) !important;
+    border: 2px #83677B !important;
+    border-radius: 200px !important; 
+}
+
+.btn-outline-success {
+    color: #295939 !important;
+    border-color: #295939 !important;
+    border-radius: 100px !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #295939 !important;
+    color: white !important;
+}

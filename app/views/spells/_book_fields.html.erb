@@ -1,7 +1,10 @@
+<br><br><br>
+<div class="container" style="text-align:center" >
 <h3> Select a book: </h3>
 <%= f.collection_select :book_id, Book.all, :id, :title, include_blank: "Select From List" %>
-
+<br><br>
 <h3>Or create a new book: </h3>
 <%= f.fields_for :book do |b| %>
     <%= render partial: "books/form", locals: { in_the_partial: b } %>
 <% end %>
+</div>

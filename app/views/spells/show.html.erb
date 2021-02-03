@@ -9,10 +9,10 @@
 
 <% if current_user.id == @spell.book.user_id %>
 <button type="button" class="btn btn-outline-success">
-<%= link_to "Edit", edit_book_spell_path(@spell), style: "color: #295939;" %>
+<%= link_to "Edit", edit_book_spell_path(@spell.book, @spell), style: "color: #295939;" %>
 </button>
 <button type="button" class="btn btn-outline-success">
-<%= link_to "Delete", book_spell_path(@spell), style: "color: #295939;", method: 'DELETE', data:{Confirm: "Are you sure you want to?"} %>
+<%= link_to "Delete", book_spell_path(@spell.book, @spell), style: "color: #295939;", method: 'DELETE', data:{Confirm: "Are you sure you want to?"} %>
 </button>
 </div>
 <% end %>
