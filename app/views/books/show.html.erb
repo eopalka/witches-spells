@@ -1,10 +1,32 @@
-<h1><%= @book.title %> </h1>
-<h2>Type of book:<%= @book.genre %> </h2>
-<h2>Difficulty:<%= @book.difficulty %> </h2>
+<br><br>
 
-<h1> This Book's spells here:</h1>
+<div class="container" style="text-align:center" >
+<h1 style="color: #4056A1"><%= @book.title %> </h1>
+<h3 style="color: #D79922;">Type: <%= @book.genre %> </h3>
+<h3 style="color: #D79922;">Difficulty: <%= @book.difficulty %> </h3>
+
+<% if current_user.id == @book.user_id%>
+<button type="button" class="btn btn-outline-success">
+<%= link_to "Edit", edit_book_path(@book), style: "color: #295939;" %>
+</button>
+<button type="button" class="btn btn-outline-success">
+<%= link_to "Delete", book_path(@book), style: "color: #295939;", method: 'DELETE', data:{Confirm: "Are you sure you want to? Deleting this book will delete all associated spells!"} %>
+</button>
+<% end %>
+</div>
+
+<br><br>
+<div class="container" style="text-align:center" >
+<h3 style="color: #F13C20;"> <%= @book.title %>'s spells:</h3>
 <%= render @book.spells %>
+</div>
 
-  
+<style>
+.container { 
+background-color: rgba(100%, 100%, 100%, .3);
+border: 2px #83677B;
+border-radius: 200px; 
+}
+</style>
 
 

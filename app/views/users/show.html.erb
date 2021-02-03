@@ -1,17 +1,28 @@
-<h1><%= @user.name%>'s Spell Books</h1>
-
-<div class="activity-feed; container" style="text-align:center" >
+<h1 class="text-center" style="color: #4056A1" >Welcome <%= @user.name%></h1>
+<br>
+<div class="container" style="text-align:center" >
+<h4 style="color: #F13C20; text-align:center">Here are the books you have created</h4>
 <% @books.each do |book| %>
-<li> <%= link_to book.title, book_path(book)%> </li>
+ <%= link_to book.title, book_path(book)%><br><br>
 <% end %>
 </div>
-<br><br><br><br><br>
+<br><br>
+
+<div class="text-center" >
+<button type="button" class="btn btn-outline-success">
+<%= link_to "Update your profile here!", edit_user_path(@user), style: "color: #295939;" %>
+</button>
+</div>
 
 
-<div class="activity-feed; container" style="text-align:center" >
-<h4 style="color: #501B1D; text-align:center">Activity Feed</h4>
+
+<br><br>
+<div class="container" style="text-align:center" >
+<h4 style="color: #D79922; text-align:center">See what your fellow Wizards are doing</h4>
   <% @activities.each do |activity| %>
-      <%= render_activity activity %>
+    <% if activity.trackable %>
+      <%= render_activity activity %><br>
+    <% end %>
   <% end %>
 </div>
 

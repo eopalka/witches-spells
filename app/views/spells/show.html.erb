@@ -1,6 +1,26 @@
-Name: <%= @spell.name %><br>
-Description: <%=  @spell.description %><br>
-Difficulty: <%= @spell.difficulty_level %><br>
-Power: <%=  @spell.power_level %><br>
+<br><br>
 
-<%= link_to "delete", spell_path(@spell), method: 'DELETE' %>
+<div class="container" style="text-align:center" >
+<h1 style="color: #4056A1"><%= @spell.name %> </h1>
+<h3 style="color: #D79922;">Description: <%= @spell.description %> </h3>
+<h3 style="color: #D79922;">Difficulty: <%= @spell.difficulty_level %> </h3>
+<h3 style="color: #D79922;">Power: <%= @spell.power_level %> </h3>
+
+
+<% if current_user.id == @spell.book.user_id %>
+<button type="button" class="btn btn-outline-success">
+<%= link_to "Edit", edit_book_spell_path(@spell), style: "color: #295939;" %>
+</button>
+<button type="button" class="btn btn-outline-success">
+<%= link_to "Delete", book_spell_path(@spell), style: "color: #295939;", method: 'DELETE', data:{Confirm: "Are you sure you want to?"} %>
+</button>
+</div>
+<% end %>
+
+<style>
+.container { 
+background-color: rgba(100%, 100%, 100%, .3);
+border: 2px #83677B;
+border-radius: 200px; 
+}
+</style>
