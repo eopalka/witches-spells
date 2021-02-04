@@ -37,6 +37,7 @@ class SpellsController < ApplicationController
         if @spell.save
             redirect_to spells_path
         else
+            @spell.build_book
             render :new
         end
     end
