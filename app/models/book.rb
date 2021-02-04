@@ -13,6 +13,11 @@ class Book < ApplicationRecord
     accepts_nested_attributes_for :spells, reject_if: proc { |attributes| attributes['name'].blank? || attributes['description'].blank? || attributes['difficulty_level'].blank? || attributes['power_level'].blank?  }
 
     def self.alphabetize
-        self.order(title: :asc)
+        Book.order(title: :asc)
     end
+
+    def self.most_recent_books
+        Book.order(created_at: :desc).limit(4)
+    end
+
 end

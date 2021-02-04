@@ -13,6 +13,11 @@ class BooksController < ApplicationController
         end
     end
 
+    def most_recent
+        @books = Book.most_recent_books
+        render :index
+    end
+
     def new
         @book = Book.new
         3.times { @book.spells.build } #has_many
@@ -24,6 +29,7 @@ class BooksController < ApplicationController
         if @book.save 
             redirect_to book_path(@book)
         else
+            3.times { @book.spells.build }
             render :new
         end
     end
