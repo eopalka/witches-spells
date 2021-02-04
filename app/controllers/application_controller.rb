@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def fallback
-        redirect_to users_path
+        redirect_to root_path
     end
 
     private
