@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/books/most_recent' => 'books#most_recent'
  
-  resources :users
+  resources :users, except: [:destroy, :index]
   resources :wands
   resources :spells
   resources :books do 
