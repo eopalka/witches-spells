@@ -3,8 +3,9 @@
 
 
 <%= render partial: "layouts/error", locals: {object: @book}  %>
-
+<div class="container" style="text-align:center" >
     <%= form_for @book do |f| %>
         <%= render partial: "form", locals: { in_the_partial: f } %>
         <%= f.submit %> 
     <% end %>
+    </div>
