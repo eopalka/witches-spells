@@ -11,6 +11,11 @@ class SpellsController < ApplicationController
         end
     end
 
+    def powerful
+        @spells = Spell.powerful
+        render :index
+    end
+
     def show
         find_book_by_id
         if !find_spell

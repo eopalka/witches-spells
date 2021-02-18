@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   get '/books/most_recent' => 'books#most_recent'
+
+  get '/spells/powerful' => 'spells#powerful'
  
   resources :users, except: [:destroy, :index]
   resources :wands
